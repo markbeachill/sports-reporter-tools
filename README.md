@@ -13,7 +13,7 @@ A documentation library of AI analysis and tutoring tools for sports writing
 - **Design Discussion** — the running design notes (parts 2–6 + rationale).
 - **Logs** — test records.
 
-## How it's built
+## How it's built 
 
 The site is plain static HTML/CSS/JS in `docs/` — **no build step is required to
 serve it**. GitHub Pages serves the `docs/` folder directly. A `.nojekyll` file is
@@ -31,4 +31,4 @@ The HTML was generated from the source `.md` and `.docx` files with `build.py`
 4. Choose **Branch: `main`** and **Folder: `/docs`**, then **Save**.
 5. The site publishes at the URL above (give it a minute on first deploy).
 
-No Actions workflow or build command is needed.
+No Actions workflow or build command is needed. 
