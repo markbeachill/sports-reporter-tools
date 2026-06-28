@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Part 5 · Teaching, Not Coaching — design note / paper for the Sports Reporter Tools project.">
+<title>Part 5 · Teaching, Not Coaching · Sports Reporter Tools</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-text">Sports Reporter Tools</span></a>
+    <div class="topbar-actions">
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools/archive/refs/heads/main.zip">Download ZIP</a>
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools">GitHub</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" aria-label="Documentation">
+<a class="nav-home" href="index.html">Overview</a>
+<div class="nav-group"><div class="nav-group-title">Tools (prompts)</div>
+<a class="nav-link" href="sr1-match-report-analyser.html">SR1 · Match Report Analyser</a>
+<a class="nav-link" href="sr2-match-report-coach.html">SR2 · Match Report Coach</a>
+<a class="nav-link" href="sr3-match-preview-analyser.html">SR3 · Match Preview Analyser</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Papers</div>
+<a class="nav-link" href="previewing-the-unplayed-match.html">Previewing the Unplayed Match</a>
+<a class="nav-link" href="paper-skeleton.html">Important Because It Isn&#x27;t — Paper Skeleton</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Design Discussion</div>
+<a class="nav-link" href="design-tutor-rationale.html">Tutor Design &amp; Rationale</a>
+<a class="nav-link" href="design-part2-readers-journey.html">Part 2 · The Reader&#x27;s Journey</a>
+<a class="nav-link" href="design-part3-important-because-it-isnt.html">Part 3 · Important Because It Isn&#x27;t</a>
+<a class="nav-link" href="design-part4-voice.html">Part 4 · Voice</a>
+<a class="nav-link active" href="design-part5-teaching-not-coaching.html">Part 5 · Teaching, Not Coaching</a>
+<a class="nav-link" href="design-part6-preview-and-social-currency.html">Part 6 · The Preview &amp; Social Currency</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Logs</div>
+<a class="nav-link" href="sr1-test-log.html">SR1 Test Log</a>
+</div>
+</nav>
+  </aside>
+  <main class="content">
+    <article class="doc">
+      <h1>Part 5 · Teaching, Not Coaching</h1>
+      
+      <p class="lead">SR2: a beginner route, and why it is a different pedagogy, not a simpler SR1</p>
+<p class="lead"><em>Design discussion, part five — AI Sports Journalism Writing Tutor</em></p>
+<p class="lead">SR1 produces sophisticated, detailed reader-journey feedback. It is convincing — but it was designed by, and tested on, sophisticated readers, in a context already soaked in the underlying theory. This note records the problem that creates for a beginner, and the design of SR2, a forked tool that addresses it. The central decision is that SR2 is NOT a shorter or simpler SR1. It is a different pedagogy. SR1 coaches an expert; SR2 teaches a novice.</p>
+<h2 id="1-the-problem-sr1-assumes-a-frame-the-beginner-lacks"><a class="anchor" href="#1-the-problem-sr1-assumes-a-frame-the-beginner-lacks">#</a>1. The problem: SR1 assumes a frame the beginner lacks</h2>
+<p>An A-Level or Level 4 student does not lack intelligence; they lack the prior frame. SR1&#x27;s feedback is not too hard to parse sentence by sentence — it is that it answers questions the beginner has not learned to ask. “The lead chose importance over liveness” is a fine sentence to someone who already believes leads have angles. To a beginner it is an answer to a question they do not know is a question.</p>
+<h2 id="2-the-decision-two-pedagogies-not-two-depths"><a class="anchor" href="#2-the-decision-two-pedagogies-not-two-depths">#</a>2. The decision: two pedagogies, not two depths</h2>
+<p>It would be easy to treat this as a tier — SR1 with the close trimmed to one point. That fails, because the beginner difference is not only quantity. It is that the move must be TAUGHT before it can be critiqued. A trimmed SR1 still assumes the frame; it just assumes it more briefly. So SR2 is a genuine fork.</p>
+<p><strong>SR1 = coaching. </strong>Surface everything, provoke the writer&#x27;s judgement, trust them to choose. Right for someone who HAS judgement to provoke.</p>
+<p><strong>SR2 = teaching. </strong>Isolate one move, name it as a normal thing writers do, show it in the student&#x27;s own work, give one concrete idea for fixing it, and demonstrate it once on a fictional example. Right for someone who does not yet know the move exists.</p>
+<h2 id="3-the-sr2-unit-concept-then-why-a-reader-cares-then-an-idea"><a class="anchor" href="#3-the-sr2-unit-concept-then-why-a-reader-cares-then-an-idea">#</a>3. The SR2 unit: concept, then why a reader cares, then an idea</h2>
+<p>SR2 runs the same three-track analysis as SR1 SILENTLY, then throws almost all of it away and teaches ONE thing. The unit has a fixed three-part shape, and the fixed shape IS the scaffolding — the beginner learns partly from the repetition of the frame:</p>
+<ul>
+<li><strong>The concept. </strong>Name the move as a normal thing good sports writers do, in one plain sentence. This installs the idea in the same breath it is applied — the complexity is not removed, it is unfolded.</li>
+<li><strong>Why a reader cares. </strong>The part most easily skipped and the most important. Not just “open on the goal” but “open on the goal BECAUSE that is the bit that makes a reader want to keep reading — the score they can get anywhere.” This is the whole reader-journey thesis handed to a novice in one sentence, and it is what lets the lesson TRANSFER: the student can apply it next time without the tool.</li>
+<li><strong>An idea for fixing it. </strong>Not a fix and not an open question — a beginner needs a handhold, not a provocation. One concrete experiment (“try writing one new opening sentence that starts with the goal, just to feel the difference”), demonstrated once on a FICTIONAL before/after, never on the student&#x27;s own words.</li>
+</ul>
+<h2 id="4-selection-the-most-learnable-move-not-the-biggest-flaw"><a class="anchor" href="#4-selection-the-most-learnable-move-not-the-biggest-flaw">#</a>4. Selection: the most LEARNABLE move, not the biggest flaw</h2>
+<p>Because SR2 teaches only one thing, its selection rule differs sharply from SR1&#x27;s. SR1 surfaces the most important thing about the writing. SR2 surfaces the one move the student is closest to UNDERSTANDING — the concept most within reach, with the gentlest on-ramp.</p>
+<p>For a multi-centre report, that is probably NOT “your centres migrate” (true but unlearnable for a novice) and probably not even “your tell-words” (a real fix but a subtle concept). It is most likely the OPENING — “lead with the exciting bit” — because it is the most graspable single principle in the whole framework, and the one whose WHY is most obvious to a beginner once pointed out. SR2 reaches for the gentlest on-ramp, not the deepest insight.</p>
+<h2 id="5-what-sr2-keeps-from-sr1-and-the-one-thing-it-bends"><a class="anchor" href="#5-what-sr2-keeps-from-sr1-and-the-one-thing-it-bends">#</a>5. What SR2 keeps from SR1, and the one thing it bends</h2>
+<p><strong>Keeps — no rewriting. </strong>This matters MORE for a beginner, not less, because a novice is more tempted to take a handed-over sentence. The “idea for fixing” must stay an experiment the student performs (“try opening on the goal”), never a line written for them. The fictional example is how SR2 demonstrates without touching their words — the same invented-example device SR1 already permits.</p>
+<p><strong>Keeps — real, not soft. </strong>The beginner mode must not slide into vague encouragement. “Great effort, keep practising!” is not beginner mode; it is abandonment with a smile. SR2 is still rigorous — it gives a REAL observation about the student&#x27;s ACTUAL writing, just one of them, taught properly. Narrow and scaffolded, not soft.</p>
+<h2 id="6-who-chooses-the-route"><a class="anchor" href="#6-who-chooses-the-route">#</a>6. Who chooses the route</h2>
+<p>As with SR1&#x27;s EAL flag and the academic toolkit&#x27;s help system, the choice should be student-triggered, not inferred. Inferring the writer&#x27;s LEVEL builds a judgement about the PERSON into a tool whose ethic is judging the WORK — and a misjudgement (“it thinks I&#x27;m a beginner”) stings in a way work-focused feedback never does. The framing of the choice matters: not “beginner / advanced” (which labels the person) but something like “walk me through it” versus “just the detailed analysis” (which labels the help wanted). Same trick as the EAL flag: change what the tool does without ranking the user.</p>
+<h3 id="status"><a class="anchor" href="#status">#</a>Status</h3>
+<p>SR2 is forked from SR1 specifically so that experimenting with a beginner pedagogy cannot destabilise SR1, which has earned its stability across several tested versions. The settled calls for the first build: ONE finding; a fictional before/after example; the unit is concept → why-a-reader-cares → an idea for fixing; expert polish deliberately out of reach; selection favours the most learnable move; the angle restraint bent to gentle suggestion and flagged for watching. Everything here is a first attempt to be seen in practice and tweaked.</p>
+<h2 id="addendum-v02-the-selection-rule-resolved"><a class="anchor" href="#addendum-v02-the-selection-rule-resolved">#</a>Addendum (v0.2) — the selection rule, resolved</h2>
+<p>The first build (above) selected the most LEARNABLE move. Testing and discussion showed this was the wrong target: it optimises ease, not value, so a student can be “failed pleasantly” — taught to perfect an opening while the report&#x27;s real problem sits untouched. Leaving the main issue behind an easy win is poor tutoring, unless the easy win is also the important one.</p>
+<p>This keeps the one-move discipline (still only one thing is TAUGHT) while closing the poor-tutoring gap (the important issue is never silently abandoned). The cost, to watch in testing: the rule now leans openly on the tool judging REACHABILITY — a judgement about the writer, not only the work — which the first build hid. The risks are underestimating beginners (flagging everything as “the next mountain” and only ever teaching the opening) or overestimating them. The flag step is partial insurance against the first. A second new tightrope: the flag must stay ONE sentence and not become a second mini-lesson by the back door. (Implemented in SR2 v0.2; rule 2, the purpose statement, Step 2 and Step 4 updated.)</p>
+<p><em>Working note, part five — SR2 beginner route. Read with parts one to four, the SR1 tool, and the test log. AI Personal Tutor Toolkit / sports-journalism variant.</em></p>
+    </article>
+  </main>
+  <aside class="toc-col">
+    <div class="toc"><div class="toc-title">On this page</div><ul>
+<li class="toc-l2"><a href="#1-the-problem-sr1-assumes-a-frame-the-beginner-lacks">1. The problem: SR1 assumes a frame the beginner lacks</a></li>
+<li class="toc-l2"><a href="#2-the-decision-two-pedagogies-not-two-depths">2. The decision: two pedagogies, not two depths</a></li>
+<li class="toc-l2"><a href="#3-the-sr2-unit-concept-then-why-a-reader-cares-then-an-idea">3. The SR2 unit: concept, then why a reader cares, then an idea</a></li>
+<li class="toc-l2"><a href="#4-selection-the-most-learnable-move-not-the-biggest-flaw">4. Selection: the most LEARNABLE move, not the biggest flaw</a></li>
+<li class="toc-l2"><a href="#5-what-sr2-keeps-from-sr1-and-the-one-thing-it-bends">5. What SR2 keeps from SR1, and the one thing it bends</a></li>
+<li class="toc-l2"><a href="#6-who-chooses-the-route">6. Who chooses the route</a></li>
+<li class="toc-l3"><a href="#status">Status</a></li>
+<li class="toc-l2"><a href="#addendum-v02-the-selection-rule-resolved">Addendum (v0.2) — the selection rule, resolved</a></li>
+</ul></div>
+  </aside>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

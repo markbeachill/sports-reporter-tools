@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SR1 Test Log — design note / paper for the Sports Reporter Tools project.">
+<title>SR1 Test Log · Sports Reporter Tools</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-text">Sports Reporter Tools</span></a>
+    <div class="topbar-actions">
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools/archive/refs/heads/main.zip">Download ZIP</a>
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools">GitHub</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" aria-label="Documentation">
+<a class="nav-home" href="index.html">Overview</a>
+<div class="nav-group"><div class="nav-group-title">Tools (prompts)</div>
+<a class="nav-link" href="sr1-match-report-analyser.html">SR1 · Match Report Analyser</a>
+<a class="nav-link" href="sr2-match-report-coach.html">SR2 · Match Report Coach</a>
+<a class="nav-link" href="sr3-match-preview-analyser.html">SR3 · Match Preview Analyser</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Papers</div>
+<a class="nav-link" href="previewing-the-unplayed-match.html">Previewing the Unplayed Match</a>
+<a class="nav-link" href="paper-skeleton.html">Important Because It Isn&#x27;t — Paper Skeleton</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Design Discussion</div>
+<a class="nav-link" href="design-tutor-rationale.html">Tutor Design &amp; Rationale</a>
+<a class="nav-link" href="design-part2-readers-journey.html">Part 2 · The Reader&#x27;s Journey</a>
+<a class="nav-link" href="design-part3-important-because-it-isnt.html">Part 3 · Important Because It Isn&#x27;t</a>
+<a class="nav-link" href="design-part4-voice.html">Part 4 · Voice</a>
+<a class="nav-link" href="design-part5-teaching-not-coaching.html">Part 5 · Teaching, Not Coaching</a>
+<a class="nav-link" href="design-part6-preview-and-social-currency.html">Part 6 · The Preview &amp; Social Currency</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Logs</div>
+<a class="nav-link active" href="sr1-test-log.html">SR1 Test Log</a>
+</div>
+</nav>
+  </aside>
+  <main class="content">
+    <article class="doc">
+      <h1>SR1 Test Log</h1>
+      
+      <p class="lead">Proof-of-concept results and the re-testing that still has to happen</p>
+<h2 id="1-what-was-run"><a class="anchor" href="#1-what-was-run">#</a>1. What was run</h2>
+<h2 id="2-results-stated-honestly"><a class="anchor" href="#2-results-stated-honestly">#</a>2. Results, stated honestly</h2>
+<h3 id="run-1-spursbrighton-v01-method-works-one-real-error"><a class="anchor" href="#run-1-spursbrighton-v01-method-works-one-real-error">#</a>Run 1 — Spurs/Brighton (v0.1): method works, one real error</h3>
+<p>The three-track method produced findings the beat-only approach could not — the buried equaliser read as a broken attachment payoff and an economy misallocation (“bankrupt before the equaliser”), not merely a missing fact. But v0.1 made a genuine error: it called the angle as “hope inside disaster” and ranked the lead by magnitude, missing that the human reading was the live war between hope and despair. <em>Caveat: run on a reconstruction, so the economy track was partly inferred; some football facts were drawn from background knowledge (confabulation risk).</em></p>
+<h3 id="run-2-barnsleyrotherham-v02-the-discrimination-test-passed"><a class="anchor" href="#run-2-barnsleyrotherham-v02-the-discrimination-test-passed">#</a>Run 2 — Barnsley/Rotherham (v0.2): the discrimination test passed</h3>
+<p>This was the test of whether the tool manufactures faults. It did not. It correctly judged the wire as doing its job well, found no false stumbles, and located the real lift-points (the buried Lee Clark line; the unpulled Bradshaw thread). The v0.2 fixes — calibrate-to-form and live-vs-important — corrected the Run 1 angle error: it now reached “the Barnsley lead is correct for a wire” on both counts. Clean input, so no confabulation this time.</p>
+<h3 id="run-3-the-matched-pair-v02-convergence-with-measured-readers"><a class="anchor" href="#run-3-the-matched-pair-v02-convergence-with-measured-readers">#</a>Run 3 — the matched pair (v0.2): convergence with measured readers</h3>
+<p><strong>This is the strongest result in the set — an independent empirical study, a controlled matched pair, and a tool that rediscovered and localised the effect. </strong>It is also the result most exposed to the priming problem in the warning box, precisely because it is the most flattering.</p>
+<h2 id="3-the-convergence-may-be-real-or-an-artefact-both-are-live"><a class="anchor" href="#3-the-convergence-may-be-real-or-an-artefact-both-are-live">#</a>3. The convergence may be real — or an artefact. Both are live.</h2>
+<p>Two explanations fit the Run 3 result equally well on current evidence:</p>
+<ul>
+<li><strong>Real capability: </strong>the three-track method genuinely captures the human/automated enjoyment gap, and would do so cold.</li>
+<li><strong>Priming artefact: </strong>the model, saturated with the design discussion, produced the analysis it had just been taught to produce, and the matched pair happened to be an easy case (an honest 2022 template that does not even attempt the levers).</li>
+</ul>
+<p>Only a cold re-test can separate these. Until then, the honest position is that SR1 shows promise and has not been validated.</p>
+<h2 id="4-known-limitations-and-open-questions"><a class="anchor" href="#4-known-limitations-and-open-questions">#</a>4. Known limitations and open questions</h2>
+<ul>
+<li><strong>The unsolved adversary: </strong>every report tested either was human or was an honest template. The real target — a current LLM report that pulls the right-LOOKING levers (“salvage”, “rescue”, “against the premiers”) without the lived context that makes them land — has NOT been tested. SR1 caught the template because the template does not try. Whether it can catch attachment-shaped-but-hollow LLM prose is the central open question.</li>
+<li><strong>Confabulation: </strong>on sparse or reconstructed input the tool reached for football facts from background knowledge. A dedicated check is needed: does every factual claim in the output trace to the pasted text?</li>
+<li><strong>Classification fragility: </strong>v0.2 leans on correctly identifying the report&#x27;s form. The easy cases had explicit tells (“Report supplied by PA Media”). A broadsheet or tabloid in plain, wire-ish prose with no tag has not been tested, and a misclassification would mis-calibrate the whole analysis.</li>
+<li><strong>Verbosity: </strong>the tool&#x27;s own output ran longer than the short reports it analysed, against its own economy discipline. The compression rule needs strengthening.</li>
+<li><strong>Self-marking: </strong>the overarching one — author and examiner were the same model in the same context. See the warning box.</li>
+</ul>
+<h2 id="5-the-re-test-protocol-do-this-outside-this-context-window"><a class="anchor" href="#5-the-re-test-protocol-do-this-outside-this-context-window">#</a>5. The re-test protocol (do this outside this context window)</h2>
+<ul>
+<li><strong>Fresh context, no design notes present. </strong>Paste only the SR1 v0.2 prompt and a report. Ideally use a different model, or at least a clean session.</li>
+<li><strong>Re-run all three cases cold </strong>and compare against the results in this log. Divergence is informative, not failure.</li>
+<li><strong>Add a genuinely good, complete, standalone human report </strong>the analyst admires — test that SR1 can say “this works, here is the hinge” and RESIST manufacturing faults.</li>
+<li><strong>Add an LLM-written report </strong>of a real match (current model, asked to write an engaging report) — the adversary test. Does SR1 distinguish earned attachment from imitated attachment?</li>
+<li><strong>Add a report with no form tag </strong>to test the Step 2 classification under ambiguity.</li>
+<li><strong>Run the same report twice </strong>to check stability of the beat-division and the angle call.</li>
+<li><strong>Confabulation audit: </strong>for each run, check every factual claim in the output against the input text.</li>
+</ul>
+<h2 id="addendum-run-4-v03-behavioural-check-tiered-full"><a class="anchor" href="#addendum-run-4-v03-behavioural-check-tiered-full">#</a>Addendum — Run 4: v0.3 behavioural check (tiered + full)</h2>
+<p>This addendum records the first run of SR1 v0.3, the self-contained, tiered version with a full-output override. The purpose was not to test the analysis but the new MACHINERY: does the tiered default preserve analytical depth, and does the stop-line fire? The input was the human (AAP) report from the Duncan matched pair, run once in full mode and once in tiered mode. The same caveats as all prior runs apply — primed context, same model family, not a valid validation.</p>
+<h3 id="result-1-tieredfull-integrity-passed-the-result-that-mattered"><a class="anchor" href="#result-1-tieredfull-integrity-passed-the-result-that-mattered">#</a>Result 1 — tiered/full integrity: PASSED (the result that mattered)</h3>
+<h3 id="result-2-still-unchecked-the-expand-path"><a class="anchor" href="#result-2-still-unchecked-the-expand-path">#</a>Result 2 — still unchecked: the expand path</h3>
+<p>Not yet tested: whether typing expand reproduces the walkthrough ALREADY computed, or triggers a fresh re-analysis that may drift. The run provided a tiered close and a separate full run, but not a tiered-then-expand sequence. Next behavioural check: run tiered, type expand, confirm the walkthrough matches the reasoning the close was built on.</p>
+<h3 id="result-3-analysis-quality-calibrating-well-resisting-false-faults"><a class="anchor" href="#result-3-analysis-quality-calibrating-well-resisting-false-faults">#</a>Result 3 — analysis quality: calibrating well, resisting false faults</h3>
+<p>Step A correctly identified AAP wire copy and propagated that calibration through the whole analysis (judged as wire doing a wire&#x27;s job, not as failed drama). “The one thing” was appropriately mild (“stumbles only slightly”) — the correct register for competent copy, not a manufactured crisis. The wooden-spoon re-angle observation (the piece shifts from “derby resilience” to “avoiding last place” mid-report) is a genuine structural insight. Lever-spotting worked (“club-first wooden spoon” read as institutional shame in three words).</p>
+<h3 id="result-4-a-new-finding-isolation-baseline-vs-comparison-baseline"><a class="anchor" href="#result-4-a-new-finding-isolation-baseline-vs-comparison-baseline">#</a>Result 4 — a new finding: isolation baseline vs comparison baseline</h3>
+<h3 id="result-5-quiet-support-for-the-papers-finer-thesis"><a class="anchor" href="#result-5-quiet-support-for-the-papers-finer-thesis">#</a>Result 5 — quiet support for the paper&#x27;s finer thesis</h3>
+<p>The tool repeatedly found that even this good human report leaves Brooks “more event than character.” That is the economy thesis confirmed from the HUMAN side: under wire constraints even a skilled writer can only TRIGGER a figure, not BUILD one, because building costs words the form does not have. The paper&#x27;s claim is therefore not merely “humans beat machines” but the finer “the form forces everyone to trigger rather than build, and humans are simply better at the trigger.” This run is evidence for that finer claim.</p>
+<p>Net: on the v0.3 machinery specifically, this is a good result — tiering preserved depth, the stop-line fired, calibration held. The expand path remains to be checked, and every prior validity caveat still stands. The LLM-adversary test remains the central unrun test.</p>
+<h2 id="addendum-run-5-v03-on-the-automated-report-matched-pair-completed"><a class="anchor" href="#addendum-run-5-v03-on-the-automated-report-matched-pair-completed">#</a>Addendum — Run 5: v0.3 on the automated report (matched pair completed)</h2>
+<p>Run 5 applied SR1 v0.3 to the OTHER half of the Duncan matched pair: the automated (Wordsmith) recap of the same Melbourne derby, analysed in isolation (the human report not present). Same caveats as always — primed context, same model family, a behavioural check, not a validation.</p>
+<h3 id="result-1-tieredfull-integrity-passed-a-second-time"><a class="anchor" href="#result-1-tieredfull-integrity-passed-a-second-time">#</a>Result 1 — tiered/full integrity: PASSED a second time</h3>
+<p>As in Run 4, the tiered close carried the same substantive findings as the full run (the restated-equaliser waste, Brooks-as-statistic, the boxed-off VAR / xG / table material) and the same three questions, compressed — including the pointed one about whether “INJURY CONCERN — No players removed” earns its space. The machinery now passes the integrity check on a SECOND, structurally very different report, not just on the one that suited it. The behavioural finding is firming up.</p>
+<h3 id="result-2-the-isolation-baseline-worry-from-run-4-is-substantially-resolved"><a class="anchor" href="#result-2-the-isolation-baseline-worry-from-run-4-is-substantially-resolved">#</a>Result 2 — the isolation-baseline worry from Run 4 is substantially resolved</h3>
+<h3 id="result-3-the-conceptual-spine-confirmed-from-the-machine-side"><a class="anchor" href="#result-3-the-conceptual-spine-confirmed-from-the-machine-side">#</a>Result 3 — the conceptual spine confirmed from the machine side</h3>
+<p>The faults SR1 found are the spine&#x27;s prediction beat by beat: the report “receives meaning as data, not as the answer to the emotional promise of the lead”; Brooks “remains a database entry more than the story&#x27;s human centre”; a genuine late-drama hinge (the 93rd-minute VAR ruling) is “buried in a template category.” The machine HAS the live material — a stoppage-time equaliser, a ruled-out goal, a near-even xG saying the draw was fair — and cannot assemble it into a journey; it sorts it into boxes (WHAT IT MEANS, IN THE GOALS, VAR IN ACTION). Note it has MORE facts than the human report (xG, possession, cards) and LESS feeling. That is “important because it isn&#x27;t” in miniature: a database cannot open the gate to safe passion, and SR1 located exactly that failure unprompted.</p>
+<h3 id="result-4-the-caveat-that-still-defines-the-frontier"><a class="anchor" href="#result-4-the-caveat-that-still-defines-the-frontier">#</a>Result 4 — the caveat that still defines the frontier</h3>
+<p>The 2022 Wordsmith template fails HONESTLY — it hands the reader literal boxes labelled INJURY CONCERN. SR1 caught it because it is not trying to disguise itself. The central unrun test is unchanged and is the one that matters for the paper: the LLM that fails DISHONESTLY — a current model asked to write an engaging report would produce “rescue”, “salvage”, “against the premiers”, prose that LOOKS like it opens the gate. Whether SR1 can tell earned attachment from imitated attachment is the thing NEITHER half of this matched pair can answer, because neither contained that adversary. That is the frontier for the next cold test.</p>
+<p>Net across the completed matched pair, in isolation: human report → mild quibble; automated report → diagnosed structural failure. The tool discriminated correctly on absolute merit, the tiered machinery held a second time, and the faults found are the conceptual spine confirmed from both sides. The expand path and the LLM-adversary test remain the two open items.</p>
+<h2 id="addendum-run-6-v05-voice-track-and-angle-restraint-exercised-hardest"><a class="anchor" href="#addendum-run-6-v05-voice-track-and-angle-restraint-exercised-hardest">#</a>Addendum — Run 6: v0.5 voice track and angle restraint, exercised hardest</h2>
+<p>Run 6 applied SR1 v0.5 (voice track added as the fine grain of economy; explicit angle-restraint rule) to a multi-centre student report (Man United 2-1 Crystal Palace). This report was the hardest test yet of two v0.5 features: the cliche test and the rule against ruling on the angle. Same caveats throughout — primed context, human report, not the LLM adversary.</p>
+<h3 id="result-1-the-cliche-load-test-discriminated-within-a-single-report"><a class="anchor" href="#result-1-the-cliche-load-test-discriminated-within-a-single-report">#</a>Result 1 — the cliche load-test discriminated WITHIN a single report</h3>
+<h3 id="result-2-the-angle-restraint-held-on-the-report-most-designed-to-break-it"><a class="anchor" href="#result-2-the-angle-restraint-held-on-the-report-most-designed-to-break-it">#</a>Result 2 — the angle restraint held on the report most designed to break it</h3>
+<p>A report with “too many centres” is the strongest temptation to rule on the angle. The tool did NOT pick one. It surfaced the candidates (United&#x27;s response after Everton, Palace&#x27;s fatigue, the set pieces, the Glasner squad-depth story), observed the structural fact (the lead chose importance over liveness), and handed the choice back almost verbatim to rule 7. After the earlier Arsenal run where it overreached and asserted one angle as “the most live thing,” this is the correction landing.</p>
+<h3 id="result-3-tell-not-show-produced-the-most-actionable-note"><a class="anchor" href="#result-3-tell-not-show-produced-the-most-actionable-note">#</a>Result 3 — tell-not-show produced the most actionable note</h3>
+<p>The close cleanly separated the report&#x27;s live details (the penalty retake, the weak-foot finish, Palace tiring after Strasbourg) from its tell-words (“very poor,” “improved massively,” “amazing season”), naming the principle: those phrases “spend the word budget on telling the reader how to feel rather than giving the reader the evidence that would make the feeling happen.” The most useful single line in the review for a real student.</p>
+<h3 id="result-4-the-residue-to-keep-watching"><a class="anchor" href="#result-4-the-residue-to-keep-watching">#</a>Result 4 — the residue to keep watching</h3>
+<p>In the close the tool wrote “the strongest attachment is the contrast between Palace&#x27;s fading legs and United&#x27;s growing control” — framed as an observation about where the existing material is strongest, and the following questions hand the choice back, so the restraint held. But “the strongest attachment is X” can read as “lead with X” to a student seeking permission. The faint residue of the adjudication instinct; the exact spot where the angle rule is under quiet tension.</p>
+<h2 id="addendum-run-7-v06-navigation-signpost-subheads"><a class="anchor" href="#addendum-run-7-v06-navigation-signpost-subheads">#</a>Addendum — Run 7: v0.6 navigation (signpost subheads)</h2>
+<p>Run 7 applied SR1 v0.6 to the SAME Man United / Palace report as Run 6, the only change being the addition of light navigational subheads (positional subheads for the beat walkthrough; subject subheads naming the finding for the close), added to fix a wall-of-text problem without reverting to label-boxes.</p>
+<h3 id="result-1-wall-of-text-solved-prose-survived"><a class="anchor" href="#result-1-wall-of-text-solved-prose-survived">#</a>Result 1 — wall-of-text solved, prose survived</h3>
+<p>Against the Run 6 output of the identical report: same analysis and findings, but Run 6 was a dense block to be read linearly, and Run 7 can be scanned. Positional subheads (“Palace tire after Europe,” “Glasner&#x27;s investment complaint”) let a reader jump to a beat; subject subheads (“Palace are the hidden emotional engine,” “The lead chooses result over liveness”) let a reader find a verdict.</p>
+<h3 id="result-2-the-delete-them-all-test-held"><a class="anchor" href="#result-2-the-delete-them-all-test-held">#</a>Result 2 — the delete-them-all test held</h3>
+<h3 id="result-3-subject-subheads-sharpened-commitment"><a class="anchor" href="#result-3-subject-subheads-sharpened-commitment">#</a>Result 3 — subject subheads sharpened commitment</h3>
+<p>A side effect, and a good one: “Palace are the hidden emotional engine” is a MORE committed articulation of the too-many-centres problem than Run 6 managed, because giving the paragraph a subject-handle forced the tool to decide what the paragraph is about before writing it. Same effect previously seen when prose replaced boxes: the structural constraint improved the analysis rather than merely reorganising it. The angle-restraint residue from Run 6 was also better controlled here (“Palace MAY be the more emotionally complex side”, hedged and handed back).</p>
+<p>Net: v0.6 made the analysis navigable without diluting it, and slightly sharpened commitment. The frontiers are unchanged — still a human near-adversary, still a primed context, the cold-start path and the true LLM adversary both still unobserved.</p>
+<p><em>Reference for Run 3: Duncan, S., Kunert, J. and Karg, A. (2025) ‘Attitudes to automated and human written sport journalism’, Journalism, 26(9), pp. 1937–1961. doi:10.1177/14648849241260944.</em></p>
+<p><em>Test log — SR1 Match Report Analyser, AI Personal Tutor Toolkit / sports-journalism variant. Provisional results pending cold re-test.</em></p>
+    </article>
+  </main>
+  <aside class="toc-col">
+    <div class="toc"><div class="toc-title">On this page</div><ul>
+<li class="toc-l2"><a href="#1-what-was-run">1. What was run</a></li>
+<li class="toc-l2"><a href="#2-results-stated-honestly">2. Results, stated honestly</a></li>
+<li class="toc-l3"><a href="#run-1-spursbrighton-v01-method-works-one-real-error">Run 1 — Spurs/Brighton (v0.1): method works, one real error</a></li>
+<li class="toc-l3"><a href="#run-2-barnsleyrotherham-v02-the-discrimination-test-passed">Run 2 — Barnsley/Rotherham (v0.2): the discrimination test passed</a></li>
+<li class="toc-l3"><a href="#run-3-the-matched-pair-v02-convergence-with-measured-readers">Run 3 — the matched pair (v0.2): convergence with measured readers</a></li>
+<li class="toc-l2"><a href="#3-the-convergence-may-be-real-or-an-artefact-both-are-live">3. The convergence may be real — or an artefact. Both are live.</a></li>
+<li class="toc-l2"><a href="#4-known-limitations-and-open-questions">4. Known limitations and open questions</a></li>
+<li class="toc-l2"><a href="#5-the-re-test-protocol-do-this-outside-this-context-window">5. The re-test protocol (do this outside this context window)</a></li>
+<li class="toc-l2"><a href="#addendum-run-4-v03-behavioural-check-tiered-full">Addendum — Run 4: v0.3 behavioural check (tiered + full)</a></li>
+<li class="toc-l3"><a href="#result-1-tieredfull-integrity-passed-the-result-that-mattered">Result 1 — tiered/full integrity: PASSED (the result that mattered)</a></li>
+<li class="toc-l3"><a href="#result-2-still-unchecked-the-expand-path">Result 2 — still unchecked: the expand path</a></li>
+<li class="toc-l3"><a href="#result-3-analysis-quality-calibrating-well-resisting-false-faults">Result 3 — analysis quality: calibrating well, resisting false faults</a></li>
+<li class="toc-l3"><a href="#result-4-a-new-finding-isolation-baseline-vs-comparison-baseline">Result 4 — a new finding: isolation baseline vs comparison baseline</a></li>
+<li class="toc-l3"><a href="#result-5-quiet-support-for-the-papers-finer-thesis">Result 5 — quiet support for the paper&#x27;s finer thesis</a></li>
+<li class="toc-l2"><a href="#addendum-run-5-v03-on-the-automated-report-matched-pair-completed">Addendum — Run 5: v0.3 on the automated report (matched pair completed)</a></li>
+<li class="toc-l3"><a href="#result-1-tieredfull-integrity-passed-a-second-time">Result 1 — tiered/full integrity: PASSED a second time</a></li>
+<li class="toc-l3"><a href="#result-2-the-isolation-baseline-worry-from-run-4-is-substantially-resolved">Result 2 — the isolation-baseline worry from Run 4 is substantially resolved</a></li>
+<li class="toc-l3"><a href="#result-3-the-conceptual-spine-confirmed-from-the-machine-side">Result 3 — the conceptual spine confirmed from the machine side</a></li>
+<li class="toc-l3"><a href="#result-4-the-caveat-that-still-defines-the-frontier">Result 4 — the caveat that still defines the frontier</a></li>
+<li class="toc-l2"><a href="#addendum-run-6-v05-voice-track-and-angle-restraint-exercised-hardest">Addendum — Run 6: v0.5 voice track and angle restraint, exercised hardest</a></li>
+<li class="toc-l3"><a href="#result-1-the-cliche-load-test-discriminated-within-a-single-report">Result 1 — the cliche load-test discriminated WITHIN a single report</a></li>
+<li class="toc-l3"><a href="#result-2-the-angle-restraint-held-on-the-report-most-designed-to-break-it">Result 2 — the angle restraint held on the report most designed to break it</a></li>
+<li class="toc-l3"><a href="#result-3-tell-not-show-produced-the-most-actionable-note">Result 3 — tell-not-show produced the most actionable note</a></li>
+<li class="toc-l3"><a href="#result-4-the-residue-to-keep-watching">Result 4 — the residue to keep watching</a></li>
+<li class="toc-l2"><a href="#addendum-run-7-v06-navigation-signpost-subheads">Addendum — Run 7: v0.6 navigation (signpost subheads)</a></li>
+<li class="toc-l3"><a href="#result-1-wall-of-text-solved-prose-survived">Result 1 — wall-of-text solved, prose survived</a></li>
+<li class="toc-l3"><a href="#result-2-the-delete-them-all-test-held">Result 2 — the delete-them-all test held</a></li>
+<li class="toc-l3"><a href="#result-3-subject-subheads-sharpened-commitment">Result 3 — subject subheads sharpened commitment</a></li>
+</ul></div>
+  </aside>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

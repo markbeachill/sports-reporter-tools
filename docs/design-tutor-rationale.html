@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tutor Design &amp; Rationale — design note / paper for the Sports Reporter Tools project.">
+<title>Tutor Design &amp; Rationale · Sports Reporter Tools</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-text">Sports Reporter Tools</span></a>
+    <div class="topbar-actions">
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools/archive/refs/heads/main.zip">Download ZIP</a>
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools">GitHub</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" aria-label="Documentation">
+<a class="nav-home" href="index.html">Overview</a>
+<div class="nav-group"><div class="nav-group-title">Tools (prompts)</div>
+<a class="nav-link" href="sr1-match-report-analyser.html">SR1 · Match Report Analyser</a>
+<a class="nav-link" href="sr2-match-report-coach.html">SR2 · Match Report Coach</a>
+<a class="nav-link" href="sr3-match-preview-analyser.html">SR3 · Match Preview Analyser</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Papers</div>
+<a class="nav-link" href="previewing-the-unplayed-match.html">Previewing the Unplayed Match</a>
+<a class="nav-link" href="paper-skeleton.html">Important Because It Isn&#x27;t — Paper Skeleton</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Design Discussion</div>
+<a class="nav-link active" href="design-tutor-rationale.html">Tutor Design &amp; Rationale</a>
+<a class="nav-link" href="design-part2-readers-journey.html">Part 2 · The Reader&#x27;s Journey</a>
+<a class="nav-link" href="design-part3-important-because-it-isnt.html">Part 3 · Important Because It Isn&#x27;t</a>
+<a class="nav-link" href="design-part4-voice.html">Part 4 · Voice</a>
+<a class="nav-link" href="design-part5-teaching-not-coaching.html">Part 5 · Teaching, Not Coaching</a>
+<a class="nav-link" href="design-part6-preview-and-social-currency.html">Part 6 · The Preview &amp; Social Currency</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Logs</div>
+<a class="nav-link" href="sr1-test-log.html">SR1 Test Log</a>
+</div>
+</nav>
+  </aside>
+  <main class="content">
+    <article class="doc">
+      <h1>Tutor Design &amp; Rationale</h1>
+      
+      <p class="lead">Design discussion and rationale</p>
+<p class="lead"><em>Working note for a domain-specific variant of the AI Personal Tutor Toolkit</em></p>
+<h2 id="1-why-this-is-a-genuine-specialism-not-a-reskin"><a class="anchor" href="#1-why-this-is-a-genuine-specialism-not-a-reskin">#</a>1. Why this is a genuine specialism, not a reskin</h2>
+<p>The core of the existing AI Personal Tutor Toolkit transfers unchanged: clarity, structure, evidence handling, the diagnose-explain-don&#x27;t-rewrite teaching loop, the help system, EAL mode, and the build and site architecture. Those parts are domain-neutral. What changes is the specialist layer on top, and sports journalism has a distinctive enough set of craft demands that this is a real specialism rather than a cosmetic reskin.</p>
+<p>A key correction to an early assumption is worth recording, because it shapes everything. It is tempting to think AI can produce sports journalism more easily than academic writing, because the structures look simpler. That is false. AI can produce fluent-sounding sports copy easily, but fluency is the enemy of good sports writing, not evidence of competence at it. The surface patterns of match reports are heavily represented in training data, which is exactly why an unaided model defaults to cliché. The thing AI does easily is the thing a good tutor must teach writers away from. The ease of generating plausible sports prose is therefore the pedagogical problem the tutor exists to solve, not a sign the craft is easy.</p>
+<h3 id="what-is-genuinely-hard-for-ai-here"><a class="anchor" href="#what-is-genuinely-hard-for-ai-here">#</a>What is genuinely hard for AI here</h3>
+<ul>
+<li><strong>Story selection. </strong>Judging what mattered depends on a model of the reader and the moment: that this was the manager&#x27;s third defeat to the same side, that the crowd had turned before the equaliser, that the substitution was the story even though it did not change the score. This is close to unautomatable, because the whole skill is seeing what is not in the bare facts.</li>
+<li><strong>Precision of the lead. </strong>A strong intro is a compression decision: of everything that happened, this is the thing, said this way. A probability-weighted model resists exactly the decisiveness a good lead needs; it summarises rather than commits, and buries the story under context because it cannot bear to leave things out.</li>
+<li><strong>Human and sporting context. </strong>Sporting meaning is cumulative and relational: a result signifies only against history, rivalry, the table and expectation. That is a web of external, time-bound, often unstated knowledge the model cannot reliably supply, and will confidently flatten or get wrong.</li>
+<li><strong>Voice. </strong>Academic writing suppresses voice; sports columns live or die on it. Helping a writer develop their own voice without sliding into cliché or pastiche is rich, teachable, and squarely within a no-imitation, no-rewrite boundary.</li>
+</ul>
+<h3 id="the-rules-are-underdeveloped-the-defining-difference"><a class="anchor" href="#the-rules-are-underdeveloped-the-defining-difference">#</a>The rules are underdeveloped — the defining difference</h3>
+<p>Academic writing has decades of codified, teachable scaffolding (IMRaD, topic sentences, the apparatus of structuring an argument). Sports journalism has conventions and exemplars but a much thinner layer of explicit, teachable rules. The good material lives in the variation and the linking rather than in a template.</p>
+<p>The structure is in one sense simpler: the skeleton is short. But the variation is stronger and the connective tissue is where the difficulty lives. A match report is not a form to fill; it is a sequence of transitions — from the decisive moment back to how it arose, sideways into a quote, forward into what it means for the table, back to a second strand of the game. This is the least rule-governed part of all, and it is where teaching effort should concentrate.</p>
+<h2 id="2-the-integrity-boundary-moves-but-does-not-disappear"><a class="anchor" href="#2-the-integrity-boundary-moves-but-does-not-disappear">#</a>2. The integrity boundary moves, but does not disappear</h2>
+<p>In the academic toolkit the line is: do not ghost-write assessed work. In journalism there is no assessment, but there is something arguably more serious — editorial standards and the law. The equivalent boundaries become: do not fabricate quotes, do not invent or misattribute facts, do not manufacture sources, and stay on the right side of UK defamation, contempt and privacy. A tutor that helped a writer compose “a source close to the club told me…” when no source exists would be the exact analogue of ghost-writing: it produces something the writer cannot stand behind.</p>
+<p>The positive framing carries over cleanly and is, if anything, stronger here: the work stays yours, and you can defend every claim in it. In journalism the consequences of a fabricated quote or a libellous line are real and external, which makes the integrity story concrete rather than procedural.</p>
+<h2 id="3-how-the-families-map-across"><a class="anchor" href="#3-how-the-families-map-across">#</a>3. How the families map across</h2>
+<h3 id="maps-almost-directly"><a class="anchor" href="#maps-almost-directly">#</a>Maps almost directly</h3>
+<ul>
+<li><strong>Writing family. </strong>Clarity, mistakes, style, flow, paraphrase and quotation all survive, and matter more than in academic writing because the copy is read fast and competes for attention. The big addition is a Cliché and Stock-Phrase Clinic — the register problem (“will be looking to bounce back”, “a game of two halves”, “he&#x27;ll be gutted”) is the default failure mode of amateur sports writing and has no academic equivalent, because academic writing&#x27;s vice is the opposite: over-formality and nominalisation.</li>
+<li><strong>Structure family. </strong>Maps in mode, but the templates change. A structure tutor teaches the canonical journalistic forms explicitly: the match report, the inverted-pyramid news piece (transfer, injury), the feature or long-read (narrative arc, scene-setting, the nut graf), the match preview, the profile, and the opinion column. Reverse-outline and whole-work-structure tools survive but are retrained on these forms and, crucially, on reading experience rather than schema compliance.</li>
+</ul>
+<h3 id="transforms-rather-than-vanishes"><a class="anchor" href="#transforms-rather-than-vanishes">#</a>Transforms rather than vanishes</h3>
+<ul>
+<li><strong>Research Proposal family → sourcing and story-development. </strong>No dissertation, but journalism has its own version of where ideas and evidence come from: story-angle development (cousin of topic brainstorming), source-and-attribution checking (cousin of the literature and source-reliability tools, but about whether a claim is properly sourced and attributed), and an interview / press-conference question practice tool — a near-perfect analogue of the viva-practice tool, feeding the writer good open questions one at a time rather than answering for them.</li>
+<li><strong>Study Workflow → newsroom workflow. </strong>Editor-feedback-to-actions maps almost exactly; add filing-to-deadline planning and an AI-use record, which matters more in journalism than academia as newsrooms, the NUJ and IPSO work out disclosure norms.</li>
+</ul>
+<h3 id="new-with-no-academic-equivalent"><a class="anchor" href="#new-with-no-academic-equivalent">#</a>New, with no academic equivalent</h3>
+<ul>
+<li><strong>Editorial-standards / legal-risk family. </strong>UK-specific. Is this claim safe to state as fact or should it be attributed or hedged? Have you got a quote you can actually stand up? Does this stray into a court reporting restriction? All in the same diagnose-explain-don&#x27;t-rewrite mode, always ending in a human check.</li>
+</ul>
+<h2 id="4-what-the-domain-adds-lean-into-these"><a class="anchor" href="#4-what-the-domain-adds-lean-into-these">#</a>4. What the domain adds — lean into these</h2>
+<ul>
+<li><strong>Deadline reality is more extreme. </strong>Match reports are filed minutes after the whistle. The tiered-review and “three takeaways” help options are not nice-to-have here; they are the core use case. A 90-second clarity-and-libel pass on a just-filed report is more valuable than a thorough one that takes ten minutes. This argues for single-tool and mini-library packaging being even more prominent than in the academic version.</li>
+<li><strong>Facts and stats need a verification layer. </strong>Scorelines, minutes, scorers, records, fees, positions. A tutor that helps a writer check these is valuable but dangerous, because a model will cheerfully hallucinate a 67th-minute goal. The correct design flags claims that need checking and points to where to verify them; it never asserts the facts itself. This sharpens the existing “do not pretend to have verified facts you have not” global rule considerably.</li>
+<li><strong>Voice is a teaching opportunity, not a liability. </strong>A tool that helps a writer find a distinctive voice without cliché or pastiche keeps the no-rewrite boundary intact: the point is to develop their voice, not to generate one.</li>
+</ul>
+<h2 id="5-the-teaching-loop-in-practice"><a class="anchor" href="#5-the-teaching-loop-in-practice">#</a>5. The teaching loop in practice</h2>
+<p>Stated plainly, the in-person method this should encode is: show good examples and discuss why they work; take the student&#x27;s work and explain what works and what does not; suggest ideas for updating; make specific fixes on grammar and use of quotes. The big criterion is whether the reader would understand each step — the order of information, what is most interesting to the reader, and whether the angle works.</p>
+<p>The instructive failure mode is the default student opening: “Team A came from behind today after a late Smith free kick.” This sentence is not bad. It is clean, grammatical and accurate. A grammar tool would pass it. It is still the wrong opening: it leads with the bare result instead of the story, front-loads the least surprising framing, and tells the reader what happened before giving them a reason to care. The tutor&#x27;s hardest job is teaching writers to be dissatisfied with a sentence that has nothing technically wrong with it — a far subtler target than “find the mistake.”</p>
+<h3 id="three-layers-in-order-of-difficulty"><a class="anchor" href="#three-layers-in-order-of-difficulty">#</a>Three layers, in order of difficulty</h3>
+<ul>
+<li>Angle and lead. Hardest, most judgement-laden, most example-dependent, mostly Socratic. The tool elicits the story rather than supplying it: what surprised you, what would you tell a mate who did not watch it, what was the actual story — the comeback, that it was undeserved, that Smith had not scored all season, that the manager&#x27;s job was on the line. Then it shows the difference between leading with the result and leading with the story on invented material, and asks the writer to try theirs again.</li>
+<li>Order of information and the reader&#x27;s journey. Structural and sequential. A reverse-outline for reading experience: walk through the piece and ask, at each step, what does the reader now know and what do they want next? This exposes the two classic faults at once — burying the story (the interesting thing arrives too late) and losing the reader (a step assumed that was not given).</li>
+<li>Finish. Quotes, grammar, cliché — closest to the existing toolkit and the easy part. Quote handling has a sports-specific edge: the quote that merely restates the action, the quote dropped in without setting up why we are hearing it, the quote that should have been paraphrased because it says nothing.</li>
+</ul>
+<h3 id="the-one-place-to-design-around-carefully"><a class="anchor" href="#the-one-place-to-design-around-carefully">#</a>The one place to design around carefully</h3>
+<p>The angle tool depends on the writer being able to answer “what was the story?” Many students cannot, which is precisely why they defaulted to the scoreline. If, in person, the angle can usually be drawn out by asking about the match (what surprised you, what would you tell a friend), the tool can do that, and the questioning keeps the judgement with the student. If instead the angle often has to be supplied for the student before they can run with it, that is the point where the tool hits a wall and needs specific design — structured prompts that help a stuck writer locate an angle without the tutor handing one over. This should be tested explicitly rather than assumed to work.</p>
+<h2 id="6-a-minimum-viable-shape"><a class="anchor" href="#6-a-minimum-viable-shape">#</a>6. A minimum viable shape</h2>
+<p>A first prototype is roughly three families, reusing the global rules, help system, EAL mode, build pipeline and site architecture wholesale — which is the real payoff of how the existing project is built:</p>
+<ul>
+<li><strong>Sports Writing </strong>— clarity, cliché clinic, quote handling and integration, voice.</li>
+<li><strong>Sports Structure </strong>— match report, news, feature and preview forms, plus reverse-outline for reading experience.</li>
+<li><strong>Editorial Standards </strong>— attribution and sourcing check, basic UK libel and contempt flagging (always ending in a human check), and an AI-use record.</li>
+</ul>
+<p>That is perhaps 12 to 15 tools. The examples corpus is load-bearing for the angle and lead work and should be treated as a first-class part of the build, not bolted on afterwards.</p>
+<h3 id="first-proof-of-concept"><a class="anchor" href="#first-proof-of-concept">#</a>First proof of concept</h3>
+<p>The chosen starting point is a Match Report Analyser. The input is a pasted match report (tested against professional samples); the tool analyses the reader journey the piece creates. The immediate question is narrow and honest: does this even work — can a model usefully trace a reader&#x27;s step-by-step experience of a real report and surface where the angle, order and linking succeed or fail, without sliding into rewriting? Later, the output of that analysis might seed modelling ideas, but the first goal is only to find out whether the approach holds up.</p>
+<p><em>Working note — AI Personal Tutor Toolkit / sports-journalism variant. For internal reference and later development.</em></p>
+    </article>
+  </main>
+  <aside class="toc-col">
+    <div class="toc"><div class="toc-title">On this page</div><ul>
+<li class="toc-l2"><a href="#1-why-this-is-a-genuine-specialism-not-a-reskin">1. Why this is a genuine specialism, not a reskin</a></li>
+<li class="toc-l3"><a href="#what-is-genuinely-hard-for-ai-here">What is genuinely hard for AI here</a></li>
+<li class="toc-l3"><a href="#the-rules-are-underdeveloped-the-defining-difference">The rules are underdeveloped — the defining difference</a></li>
+<li class="toc-l2"><a href="#2-the-integrity-boundary-moves-but-does-not-disappear">2. The integrity boundary moves, but does not disappear</a></li>
+<li class="toc-l2"><a href="#3-how-the-families-map-across">3. How the families map across</a></li>
+<li class="toc-l3"><a href="#maps-almost-directly">Maps almost directly</a></li>
+<li class="toc-l3"><a href="#transforms-rather-than-vanishes">Transforms rather than vanishes</a></li>
+<li class="toc-l3"><a href="#new-with-no-academic-equivalent">New, with no academic equivalent</a></li>
+<li class="toc-l2"><a href="#4-what-the-domain-adds-lean-into-these">4. What the domain adds — lean into these</a></li>
+<li class="toc-l2"><a href="#5-the-teaching-loop-in-practice">5. The teaching loop in practice</a></li>
+<li class="toc-l3"><a href="#three-layers-in-order-of-difficulty">Three layers, in order of difficulty</a></li>
+<li class="toc-l3"><a href="#the-one-place-to-design-around-carefully">The one place to design around carefully</a></li>
+<li class="toc-l2"><a href="#6-a-minimum-viable-shape">6. A minimum viable shape</a></li>
+<li class="toc-l3"><a href="#first-proof-of-concept">First proof of concept</a></li>
+</ul></div>
+  </aside>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

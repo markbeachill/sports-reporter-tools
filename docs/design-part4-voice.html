@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Part 4 · Voice — design note / paper for the Sports Reporter Tools project.">
+<title>Part 4 · Voice · Sports Reporter Tools</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-text">Sports Reporter Tools</span></a>
+    <div class="topbar-actions">
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools/archive/refs/heads/main.zip">Download ZIP</a>
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools">GitHub</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" aria-label="Documentation">
+<a class="nav-home" href="index.html">Overview</a>
+<div class="nav-group"><div class="nav-group-title">Tools (prompts)</div>
+<a class="nav-link" href="sr1-match-report-analyser.html">SR1 · Match Report Analyser</a>
+<a class="nav-link" href="sr2-match-report-coach.html">SR2 · Match Report Coach</a>
+<a class="nav-link" href="sr3-match-preview-analyser.html">SR3 · Match Preview Analyser</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Papers</div>
+<a class="nav-link" href="previewing-the-unplayed-match.html">Previewing the Unplayed Match</a>
+<a class="nav-link" href="paper-skeleton.html">Important Because It Isn&#x27;t — Paper Skeleton</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Design Discussion</div>
+<a class="nav-link" href="design-tutor-rationale.html">Tutor Design &amp; Rationale</a>
+<a class="nav-link" href="design-part2-readers-journey.html">Part 2 · The Reader&#x27;s Journey</a>
+<a class="nav-link" href="design-part3-important-because-it-isnt.html">Part 3 · Important Because It Isn&#x27;t</a>
+<a class="nav-link active" href="design-part4-voice.html">Part 4 · Voice</a>
+<a class="nav-link" href="design-part5-teaching-not-coaching.html">Part 5 · Teaching, Not Coaching</a>
+<a class="nav-link" href="design-part6-preview-and-social-currency.html">Part 6 · The Preview &amp; Social Currency</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Logs</div>
+<a class="nav-link" href="sr1-test-log.html">SR1 Test Log</a>
+</div>
+</nav>
+  </aside>
+  <main class="content">
+    <article class="doc">
+      <h1>Part 4 · Voice</h1>
+      
+      <p class="lead">The fine grain of economy, and the cliché test</p>
+<p class="lead"><em>Design discussion, part four — AI Sports Journalism Writing Tutor</em></p>
+<p class="lead">This note records the fourth analytical move the tool makes, added after the factual, attachment and economy tracks were working. It began as a gap noticed in a live run: a student-style report full of phrasing the tool walked past — dead clichés, tired adjectives, a goal described in a sentence that tripped over itself — none of which the three existing tracks could see, because none of them looks at the texture of the prose itself. Voice is that missing layer. The note sets out what voice is, why it is treated as part of economy rather than as a separate track, the four types of voice observation, and the cliché test, which is the part with a small claim of its own.</p>
+<h2 id="1-voice-is-economy-seen-up-close"><a class="anchor" href="#1-voice-is-economy-seen-up-close">#</a>1. Voice is economy seen up close</h2>
+<p>The economy track asks whether a BEAT spent its word budget well — whether the writing pulled a lever on feeling the reader already has, or spent words on plain information, and whether the budget ran dry before the moment that mattered. Voice asks the same question one magnification deeper: did THIS PHRASE pull a lever or spend a dead word? They are the same axis. A tired phrase is an economy failure at phrase scale — a word spent, nothing detonated. So voice is folded into economy, not bolted on as a fourth track.</p>
+<h2 id="2-the-four-types-a-voice-note-must-name-a-phrase"><a class="anchor" href="#2-the-four-types-a-voice-note-must-name-a-phrase">#</a>2. The four types — a voice note must name a phrase</h2>
+<p>The earlier framing — “is the voice working?” — was too vague to be a test. A voice observation now counts only if it QUOTES a specific phrase and assigns it one of four types:</p>
+<ul>
+<li><strong>Dead currency. </strong>A stock phrase doing the work a real observation should do. Test: could this exact sentence appear in a report of ANY match? If yes, it is spent currency, not voice.</li>
+<li><strong>Tell, not show. </strong>An evaluative word ASSERTING a judgement instead of giving the reader the evidence to feel it — naming a side “turgid” rather than delivering the thing that earns the word. The direct economy link: a tell-word spends a word and detonates nothing, because the reader is informed of a feeling rather than given cause to have it.</li>
+<li><strong>Reach that misfires. </strong>The writer GOING FOR voice and the mechanics failing — an odd word, a collapsed sentence — so the attempt draws attention to itself. Credit the reach; name the miss.</li>
+<li><strong>Live detail. </strong>The positive pole, and it MUST be credited where present: a specific, earned phrase only someone who SAW this match would write. Naming where the voice works is as important as naming where it fails. This is not a fault-hunt — and the live-detail category is also the most likely place to catch imitation, because attachment and economy can be faked by pattern, but a living, specific voice is harder to fake.</li>
+</ul>
+<h2 id="3-the-cliché-test-judge-by-load-not-by-freshness"><a class="anchor" href="#3-the-cliché-test-judge-by-load-not-by-freshness">#</a>3. The cliché test — judge by load, not by freshness</h2>
+<p>This is the part with a claim of its own, and it corrects a crude instinct the tool would otherwise have. A naive voice reading flags every cliché as a failure. That is wrong about sports writing specifically, because in sport the cliché is sometimes the RIGHT tool.</p>
+<p>Many sporting clichés — “grind out a win”, “find a way”, “always in games” — are clichés PRECISELY BECAUSE THEY ARE TRUE. They have calcified because they name a real, recurring pattern in the game. The fault, when there is one, is therefore not that the phrase is a cliché. It is whether the cliché is being asked to do a job it cannot do.</p>
+<h3 id="the-case-that-makes-the-tool-useful-rather-than-schoolmarmish"><a class="anchor" href="#the-case-that-makes-the-tool-useful-rather-than-schoolmarmish">#</a>The case that makes the tool useful rather than schoolmarmish</h3>
+<p>A load-bearing cliché splits into two sub-cases, and the second is the important one:</p>
+<ul>
+<li><strong>Content wrong. </strong>The cliché says nothing true about this match. A plain failure.</li>
+<li><strong>Content right. </strong>The instinct is sound — the cliché names something true about this match — but the currency is spent. Here the note is NOT “cut it.” It is REFORMULATE the true thing in words specific to this match (Orwell&#x27;s “find a new way of saying it”). A naive reading would tell the writer to delete their truest observation; that is exactly backwards. The instinct was right; only the execution was lazy.</li>
+</ul>
+<h2 id="4-discipline-voice-is-diagnosed-never-fixed"><a class="anchor" href="#4-discipline-voice-is-diagnosed-never-fixed">#</a>4. Discipline: voice is diagnosed, never fixed</h2>
+<p>Voice is the track most likely to pull the tool into rewriting, which the no-rewrite rule forbids. The moment it says “this is cliché”, the natural next move is “you could say X instead” — and that is ghost-writing the writer&#x27;s voice. So the voice track carries the same diagnose-never-fix discipline as the rest: name the dead phrase, name the mismatch, ask the writer a question about it (“what did you actually see?”), and never supply the better word. The reformulation case is the sharpest test of this: the tool must say “reformulate the true thing” WITHOUT performing the reformulation.</p>
+<h3 id="what-this-contributes"><a class="anchor" href="#what-this-contributes">#</a>What this contributes</h3>
+<p>Two things worth keeping. First, voice-as-phrase-level-economy unifies the tool: the same misallocation logic runs from whole-report framing down to the single word, so the analysis has one spine rather than four. Second, the cliché-by-load principle is a small claim in its own right. The craft literature tends to discourage cliché in general terms (Orwell, the style guides); the sharper, more accurate claim that falls out of the economy thesis is that cliché in sports writing is judged by LOAD, not freshness — passing where the moment is cheap, failing where the moment is expensive, and reformulated rather than cut where the content is true. That is more useful to a working sports writer than a blanket discouragement, and it is defensible because it is derived, not asserted.</p>
+<p><em>Working note, part four — the voice track. Read with parts one to three and the SR1 test log. AI Personal Tutor Toolkit / sports-journalism variant.</em></p>
+    </article>
+  </main>
+  <aside class="toc-col">
+    <div class="toc"><div class="toc-title">On this page</div><ul>
+<li class="toc-l2"><a href="#1-voice-is-economy-seen-up-close">1. Voice is economy seen up close</a></li>
+<li class="toc-l2"><a href="#2-the-four-types-a-voice-note-must-name-a-phrase">2. The four types — a voice note must name a phrase</a></li>
+<li class="toc-l2"><a href="#3-the-cliché-test-judge-by-load-not-by-freshness">3. The cliché test — judge by load, not by freshness</a></li>
+<li class="toc-l3"><a href="#the-case-that-makes-the-tool-useful-rather-than-schoolmarmish">The case that makes the tool useful rather than schoolmarmish</a></li>
+<li class="toc-l2"><a href="#4-discipline-voice-is-diagnosed-never-fixed">4. Discipline: voice is diagnosed, never fixed</a></li>
+<li class="toc-l3"><a href="#what-this-contributes">What this contributes</a></li>
+</ul></div>
+  </aside>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

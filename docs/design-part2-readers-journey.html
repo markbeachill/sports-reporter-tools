@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Part 2 · The Reader&#x27;s Journey — design note / paper for the Sports Reporter Tools project.">
+<title>Part 2 · The Reader&#x27;s Journey · Sports Reporter Tools</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-text">Sports Reporter Tools</span></a>
+    <div class="topbar-actions">
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools/archive/refs/heads/main.zip">Download ZIP</a>
+      <a class="btn-ghost" href="https://github.com/markbeachill/sports-reporter-tools">GitHub</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" aria-label="Documentation">
+<a class="nav-home" href="index.html">Overview</a>
+<div class="nav-group"><div class="nav-group-title">Tools (prompts)</div>
+<a class="nav-link" href="sr1-match-report-analyser.html">SR1 · Match Report Analyser</a>
+<a class="nav-link" href="sr2-match-report-coach.html">SR2 · Match Report Coach</a>
+<a class="nav-link" href="sr3-match-preview-analyser.html">SR3 · Match Preview Analyser</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Papers</div>
+<a class="nav-link" href="previewing-the-unplayed-match.html">Previewing the Unplayed Match</a>
+<a class="nav-link" href="paper-skeleton.html">Important Because It Isn&#x27;t — Paper Skeleton</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Design Discussion</div>
+<a class="nav-link" href="design-tutor-rationale.html">Tutor Design &amp; Rationale</a>
+<a class="nav-link active" href="design-part2-readers-journey.html">Part 2 · The Reader&#x27;s Journey</a>
+<a class="nav-link" href="design-part3-important-because-it-isnt.html">Part 3 · Important Because It Isn&#x27;t</a>
+<a class="nav-link" href="design-part4-voice.html">Part 4 · Voice</a>
+<a class="nav-link" href="design-part5-teaching-not-coaching.html">Part 5 · Teaching, Not Coaching</a>
+<a class="nav-link" href="design-part6-preview-and-social-currency.html">Part 6 · The Preview &amp; Social Currency</a>
+</div>
+<div class="nav-group"><div class="nav-group-title">Logs</div>
+<a class="nav-link" href="sr1-test-log.html">SR1 Test Log</a>
+</div>
+</nav>
+  </aside>
+  <main class="content">
+    <article class="doc">
+      <h1>Part 2 · The Reader&#x27;s Journey</h1>
+      
+      <p class="lead">Developing an analysis tool: attachment and economy</p>
+<p class="lead"><em>Design discussion, part two — for the AI Sports Journalism Writing Tutor</em></p>
+<p class="lead">This note continues the design discussion for a sports-journalism analysis tool. The first note established why sports writing is a genuine specialism and proposed a Match Report Analyser that traces the reader&#x27;s journey through a piece. This note records how that idea developed once it met a real example, why an early version of the emotional model was wrong, and the sharper model the discussion arrived at. The earlier version is kept here deliberately, as a worked example of a plausible idea that did not quite hold.</p>
+<h2 id="1-where-we-started-the-factual-beat-spine"><a class="anchor" href="#1-where-we-started-the-factual-beat-spine">#</a>1. Where we started: the factual beat-spine</h2>
+<p>The first working tool reads a pasted match report and walks the reader through it in order — the lead, then each natural beat — asking at each step what the reader now knows, what they want next, whether the angle lands, and whether the links between beats hold. It does this strictly: it diagnoses and asks questions, but never rewrites. This was tested on a real BBC report of Tottenham 2-2 Brighton and it worked. It found a genuine fault no rubric would catch: the piece promises a 2-2 with a late blow and never shows the four goals, so its emotional verdict rests on events the reader never witnessed.</p>
+<p>That result is the foundation. The factual beat-spine is proven: a model can trace what is on the page and find where the reader&#x27;s informational journey stumbles. Everything below is about a second journey running underneath the factual one.</p>
+<h2 id="2-the-first-model-of-the-emotional-journey-and-why-it-didnt-quite-work"><a class="anchor" href="#2-the-first-model-of-the-emotional-journey-and-why-it-didnt-quite-work">#</a>2. The first model of the emotional journey — and why it didn&#x27;t quite work</h2>
+<p>The tool&#x27;s analysis of the Spurs-Brighton piece named the angle as “reasons for hope inside a disaster.” That sounded right, and it is defensible. But it was the analyst&#x27;s reading, not the reader&#x27;s. The angle a supporter actually brings to that piece is not hope nested inside disaster — it is the live competition between hope and despair in the same mind at the same time. “It&#x27;s the hope that kills you.” Hope is not consolation within the disaster; it is the mechanism of the suffering. From sick as a parrot to over the moon, held at once.</p>
+<p>The instinctive fix was: make the tool pick a side. The emotional journey only exists once you commit to a vantage point, so let the writer choose home fan, away fan, neutral, and condition everything on that. This was an improvement on the single neutral reader, but it was also wrong, and recording why is the point of this section.</p>
+<h3 id="why-pick-a-side-was-the-wrong-fix"><a class="anchor" href="#why-pick-a-side-was-the-wrong-fix">#</a>Why “pick a side” was the wrong fix</h3>
+<p>Most readers of a Spurs-Brighton report support neither club. A tool whose emotional analysis requires partisanship fails for the majority of real readers — the wrong place to land. Partisanship is one chair in a large room, and not the most common one. The readers of that piece include, at least:</p>
+<ul>
+<li><strong>the vicarious reader</strong>, living a drama that is not theirs;</li>
+<li><strong>the comparative reader</strong>, reading another club&#x27;s trouble through the lens of their own;</li>
+<li><strong>the social reader</strong>, gathering a take for the pub;</li>
+<li><strong>the affiliative reader</strong>, connecting to football as a culture, a class identity, a shared language;</li>
+<li><strong>the philosophical reader</strong>, finding a small parable about hope, decline and how people bear reversal;</li>
+<li><strong>the TV-watcher</strong>, who saw the game and wants the report to organise and confirm what they felt.</li>
+</ul>
+<p>These are not softer partisans. They are different questions brought to the text, and each makes different parts of the piece matter. The 1935 record is a gut-punch to the Spurs fan, the hook of the parable to the philosophical reader, a measuring-stick to the comparative reader, and a fact to repeat to the pub reader. “Pick a side” collapses all of that into one chair and serves only the few who sit in it.</p>
+<h2 id="3-the-model-that-held-vicarious-attachment-with-a-dial"><a class="anchor" href="#3-the-model-that-held-vicarious-attachment-with-a-dial">#</a>3. The model that held: vicarious attachment, with a dial</h2>
+<p>The resolution was to stop treating vicarious and partisan as separate readers and see them as the same mechanism at different intensities. Watching a game between teams you do not follow, you still drift into mildly wanting one of them to win — recruited by a neat passage of play, a manager who looks like he is enduring something, an underdog, an away end still singing at 3-0 down. And you can switch. The low stakes are exactly what let you move, and the moving is part of the pleasure.</p>
+<p>This dissolves the relativist trap. The multi-reader lens, left loose, becomes a shrug: everything serves someone, so nothing is wrong, and the student learns no judgement. The attachment mechanism avoids that, because it does not ask which reader showed up — it asks what the writing offers. Does the piece give the reader something or someone to invest in? Where is the pull strong, where is it absent, and does the available attachment shift as the piece goes, the way it does watching live?</p>
+<p>This rehabilitates the colour beats. The fans roaring at the team sheet, the flags — these are not soft padding. They are attachment offers: the writer handing the unaffiliated reader a side to lightly adopt. And it sharpens the goals fault a third time. Burying the equaliser is not only a missing fact and a missing emotional peak; it is a missed attachment payoff. Whoever the reader had provisionally adopted, the late goal was the moment their investment paid out or broke, and the writer skipped the cash-in. Even the TV-watcher did not watch neutrally — they drifted into mildly wanting an outcome, and they read the report partly to check whether the writer felt the game as they did.</p>
+<h2 id="4-the-constraint-that-makes-it-hard-economy"><a class="anchor" href="#4-the-constraint-that-makes-it-hard-economy">#</a>4. The constraint that makes it hard: economy</h2>
+<p>All of the above must be achieved in very few words. A match report is not a novel. A novelist earns attachment over forty pages; a report has perhaps three hundred and fifty words and must recruit the reader in the time it takes to read a text message. So the report does not build emotion — it triggers emotion the reader already carries and points it at this match.</p>
+<p>This is where the fluent-but-flat AI default does its worst damage. Given few words, a model spends them on completeness — cover the facts, get the score in, mention both teams. It treats brevity as saying less of everything. The craft is the opposite: choose the one lever and pull it hard, leaving the rest implied. Left alone the model writes “Tottenham drew 2-2 with Brighton on Saturday to extend their winless run” — every fact present, every word wasted, no lever pulled. Economy requires knowing which single thing the reader will complete for you, which is the cumulative, lived-context judgement at the human core of the craft.</p>
+<p>Economy also reframes the goals fault one final time, and most cuttingly. In a piece this short, every word given to setup is a word taken from payoff. The report spent its budget on the frame — 1935, the De Zerbi project, the pre-match colour — and ran out of room for the moment. The drama arrived and there was no space left to detonate it. The fault was not just imperfect economy; it was misallocation. “You spent your word budget on the framing and went bankrupt before the equaliser” is a real desk-editor&#x27;s judgement.</p>
+<h2 id="5-the-model-the-tool-encodes"><a class="anchor" href="#5-the-model-the-tool-encodes">#</a>5. The model the tool encodes</h2>
+<p>The analysis tracks three journeys against a piece read in seconds, and judges the writing by one unifying question.</p>
+<ul>
+<li>The factual journey — what the reader learns, in order: where the angle lands, where information arrives too early or too late, where a step is assumed that a non-expert reader would stumble on.</li>
+<li>The attachment journey — where the piece offers a reader, any reader, someone or something to invest in; how strong the pull is; whether it shifts; and whether the investment is paid off.</li>
+<li>Economy — what each phrase does per word: which levers it pulls on feeling the reader already has, and where words are spent without detonating fact or feeling. Including misallocation: a budget spent on frame with nothing left for the moment.</li>
+</ul>
+<h3 id="what-the-tool-cannot-do-the-standing-limit"><a class="anchor" href="#what-the-tool-cannot-do-the-standing-limit">#</a>What the tool cannot do — the standing limit</h3>
+<p>The corpus and the mechanism get the typical reader&#x27;s journey: the well-modelled, attachment-backed version. They do not get this fan, this rivalry&#x27;s specific texture, the thing only lived support knows. The improvement over the first attempt is that the tool now produces a reading worth checking — in the reader&#x27;s own terms of attachment and feeling — rather than a neutral analyst&#x27;s reading that has to be translated. The human in the loop still checks the reading; the tool&#x27;s job is to make that reading good enough to be worth checking, and compressed enough to respect the form.</p>
+<p>There is also a boundary of purpose. The attachment lens must help a writer honour the emotional reality the match actually had, not engineer feelings they have not earned. The moment the tool suggests how to heighten the despair rather than how to honour it, it has stopped teaching and started ghost-writing the reader&#x27;s feelings. Surface the gap; let the writer close it truthfully.</p>
+<p><em>Working note, part two — AI Personal Tutor Toolkit / sports-journalism variant. Read alongside part one. For internal reference and later development.</em></p>
+    </article>
+  </main>
+  <aside class="toc-col">
+    <div class="toc"><div class="toc-title">On this page</div><ul>
+<li class="toc-l2"><a href="#1-where-we-started-the-factual-beat-spine">1. Where we started: the factual beat-spine</a></li>
+<li class="toc-l2"><a href="#2-the-first-model-of-the-emotional-journey-and-why-it-didnt-quite-work">2. The first model of the emotional journey — and why it didn&#x27;t quite work</a></li>
+<li class="toc-l3"><a href="#why-pick-a-side-was-the-wrong-fix">Why “pick a side” was the wrong fix</a></li>
+<li class="toc-l2"><a href="#3-the-model-that-held-vicarious-attachment-with-a-dial">3. The model that held: vicarious attachment, with a dial</a></li>
+<li class="toc-l2"><a href="#4-the-constraint-that-makes-it-hard-economy">4. The constraint that makes it hard: economy</a></li>
+<li class="toc-l2"><a href="#5-the-model-the-tool-encodes">5. The model the tool encodes</a></li>
+<li class="toc-l3"><a href="#what-the-tool-cannot-do-the-standing-limit">What the tool cannot do — the standing limit</a></li>
+</ul></div>
+  </aside>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
